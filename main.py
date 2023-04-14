@@ -8,12 +8,12 @@ from decouple import config
 from features import fetchFact
 from features import fetchImage
 
-for i in range(3):
-    print("🔄Starting a new cycle")
+
+while True:
     username = config("INSTA_USERNAME")#"facts1Fantastic1facts"#artisticwonders_234
     password = config("INSTA_PASSWORD")#"password.1"
     fact = fetchFact.fetchFact()
-    image_theme_array = ["mystery", "fact", "color", "art","nature"]
+    image_theme_array = ["mystery", "color", "art","nature"]
     image_theme = image_theme_array[random.randint(0,2)]
     image = fetchImage.fetchImage(image_theme)
 
@@ -64,5 +64,6 @@ for i in range(3):
     except:
         print("little error")
         pass
-    print("\n.......................................\n😏done")
-    time.sleep(120)
+    print("😏done\n.......................................\n")
+    print("🔄Starting a new cycle")
+    time.sleep(3689*random.randint(1,4))
